@@ -23,10 +23,11 @@ def get_userinput():
     print("Welcome to math adventure")
     
     name = input("What is your name?: ")
-    print(f"Hi" + {name})
+    print(f"Hi {name}")
 
     age = input("How old are you?: ")
     print(f"{age}")
 
         
 
+get_userinput()
