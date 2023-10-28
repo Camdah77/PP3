@@ -4,6 +4,8 @@ from datetime import date
 import datetime
 import random
 import operator as op
+import time
+import sys
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -16,111 +18,74 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('math')
 
-print("Welcome to math challenge")
-print("\n")
-print("This game has two level")
-print("Level 1: Contains addition and subtraction")
-print("Level 2: Contains addition, subtraction, division and multiplication")
-print("The number of questions is based on your age")
-print("\n")
+print("ESCAPE FROM THE MUSEUM")
+print("You are all alone in a museum.\n "  "All the doors are locked.\n " "You need a key to get out. \n" "Your mission enter five locked door to find the key.\n")
 
 
-def get_userinfo():
-    name = input("What is your name?")
-    age = input("How old are you?")
-operator = random.choice(['+', '-', '*', '/'])
+def get_choice(options):
+    valid_choice = False
+    while not valid_choice:
+        print("\n Your alternatvies:")
+        for i, option in enumerate(options, 1):
+            print(f"{i}. {option}")
+        choice = input("Make a choice, please: ")
 
-levels = {
-    "1": operator['+'],
-    "2": operator['+', '-'],
-    "3": operator['+', '-', '*', '/']
-}
+        if choice.isdigit():
+            choice = int(choice)
+            if 1 <= choice <= len(options):
+                valid_choice = True
+            else:
+                print("Invalid choice. Please try again.")
+        else:
+            print("Invalid input. Please enter a number.")
+    return choice
 
-def select_level():
-    print("Levels:")
-    for name, level in levels.items(): 
-        print("{}: {}".format(name, level))
-    print("")
-    name = input("Choose level: ")
-    while name not in LEVELS:
-        print("Not a valid choice!")
-        name = input("Choose level:")
-    return LEVELS[name]
+def startlevel():
+    print("You have two doors in front of you.")
+    while True:
+        choice = get_choice(["Left door", "Right door"])
+        if choice == 1:
+            {leftdoor()}
+        elif choice == 2:
+            print("Nice! You are closer to the freedom")
+            {rightdoor()}
 
-def addition(self):
-        """
-        Addition for level 1-3
-        Question & answer
-        """
- 
-        # Generating two random numbers between 1 and 10.
-        num1 = random.randint(1, 10)
-        num2 = random.randint(1, 10)
- 
-        # Creating the question string.
-        question = f"What is {num1} + {num2}?"
- 
-        # Calculating the correct answer.
-        answer = num1 + num2
- 
-        return question, answer
+def leftdoor():
+    print("\n After you entered the left door and you now need a code to pass door nr 2")
+    leftroom_code = input("The code is: half of two plus two? Type your answer  :")
+  
+    if leftroom_code == 3: 
+        {fruitlevel()}
+    
+    else:
+        print("Sorry, that's not correct.")
+        exit_program()
 
-def subtraction(self):
-        """
-        subtraction for level 1-3
-        Question & answer
-        """
- 
-        # Generating two random numbers between 1 and 10.
-        num1 = random.randint(1, 10)
-        num2 = random.randint(1, 10)
- 
-        # Creating the question string.
-        question = f"What is {num1} - {num2}?"
- 
-        # Calculating the correct answer.
-        answer = num1 - num2
- 
-        return question, answer
 
-def division(self):
-        """
-        division for level 3
-        Question & answer
-        """
- 
-        # Generating two random numbers between 1 and 10.
-        num1 = random.randint(1, 10)
-        num2 = random.randint(1, 10)
- 
-        # Creating the question string.
-        question = f"What is {num1} / {num2}?"
- 
-        # Calculating the correct answer.
-        answer = num1 / num2
- 
-        return question, answer
+def rightdoor():
+    print("\n Nice! You are closer to the freedom. You now need a cod to enter your second door")
+    rightroom_code = input("The code is: 23 - 13 + 4? Type your answer  :")
+    rightroom_correct = 14
 
-def multiplication(self):
-        """
-        multiplication for level 3
-        Question & answer
-        """
- 
-        # Generating two random numbers between 1 and 10.
-        num1 = random.randint(1, 10)
-        num2 = random.randint(1, 10)
- 
-        # Creating the question string.
-        question = f"What is {num1} * {num2}?"
- 
-        # Calculating the correct answer.
-        answer = num1 * num2
- 
-        return question, answer
- 
- if __name__ == "__main__":
-    num_questions = (f'{age}')
-    LEVELS = select_level()
-    game = MathGame(num_questions)
-    game.play()
+    if int(rightroom_code) == rightroom_correct: 
+        {fruitlevel()}
+    
+    else:
+        print("Sorry, that's not correct.The code was:", rightroom_correct)
+        exit_program()
+
+def fruitlevel():
+      print("Correct answers! You have now entered your second of five doors.")
+      # Create an array (list) of fruits
+      fruits = ["apple", "banana", "cherry", "date", "fig"]  
+
+
+
+def exit_program():
+    print("You have to stay in the museum until somebody is coming...")
+    sys.exit(0)
+
+if __name__ == "__main__":
+    startlevel()
+    leftdoor()
+    
