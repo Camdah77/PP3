@@ -53,10 +53,11 @@ def startlevel():
 def leftdoor():
     print("\n After you entered the left door and you now need a code to pass door nr 2")
     leftroom_code = input("The code is: half of two plus two? Type your answer  :")
-  
-    if leftroom_code == 3: 
-        {fruitlevel()}
-    
+    leftdoor_correct = 3
+
+    if int(leftroom_code) == leftdoor_correct : 
+        {level2()}
+        valid_choice = False
     else:
         print("Sorry, that's not correct.")
         exit_program()
@@ -64,20 +65,53 @@ def leftdoor():
 
 def rightdoor():
     print("\n Nice! You are closer to the freedom. You now need a cod to enter your second door")
-    rightroom_code = input("The code is: 23 - 13 + 4? Type your answer  :")
+    rightroom_code = input("The code is: 23 - 13 + 4? Type thr code?  :")
     rightroom_correct = 14
 
     if int(rightroom_code) == rightroom_correct: 
-        {fruitlevel()}
+        {level2()}
+        valid_choice = False
     
     else:
         print("Sorry, that's not correct.The code was:", rightroom_correct)
         exit_program()
 
-def fruitlevel():
-      print("Correct answers! You have now entered your second of five doors.")
-      # Create an array (list) of fruits
-      fruits = ["apple", "banana", "cherry", "date", "fig"]  
+def level2():
+        # Generate a random numbers
+        num1 = random.randint(1, 10)
+        num2 = random.randint(1, 10)
+        num3 = random.randint(1, 100)
+
+     
+print("Correct! Answer three questions to enter next door. ")
+
+print(num1, "+", num3 )
+user_answer1 = int(input("Your answer: "))
+
+print(num2, "*", num3,)
+user_answer2 = int(input("Your answer: "))
+
+print(num3, "-", num1,)
+user_answer3 = int(input("Your answer: "))
+
+# Check answers
+if user_answer1 == num1 + num3:
+    print("Question 1: Correct ")
+else:
+    print("Question 1: wrong answer")
+
+if user_answer2 == num2 * num3:
+    print("Question 2: Correct")
+else:
+    print("Question 2: wrong answer")
+
+if user_answer3 == num3 - num1:
+    print("Question 3: Correct")
+else:
+    print("Question 3: wrong answer")
+
+
+
 
 
 
@@ -88,4 +122,5 @@ def exit_program():
 if __name__ == "__main__":
     startlevel()
     leftdoor()
-    
+    rightdoor()
+    level2()
