@@ -1,7 +1,7 @@
 "Math Adventure: Museum Escape" is an engaging text-based app where users find themselves trapped in a museum, and the only way to escape is by solving riddles and math-related questions. The game is divided into four stages, each stage representing a different area or room in the museum. The goal is to reach the final door and enter a four-digit code to unlock it. If the user answers a question incorrectly, they may be given a chance to try again.
 
 
-![Site view across devices]
+![Site view across devices](/images/responsive.png)
 
 "Math Adventure: Museum Escape" is LIVE: https://camillapp3-96293dfa06b1.herokuapp.com/
 
@@ -33,12 +33,17 @@
 
 ### Site Purpose:
 This app allows the user to practise math in a fun and engaging way. 
+The game integrates with the user by asking questions and basing the game plan on its answers.
 
 ### Site Goal: 
-My own son, 13 years old, think it´s very boring to do his homework in math. By this app I hope to engage kids, as my own son to find the ha
+I got the idea for the app when I was sitting with my 13-year-old son's homework in math. 
+Every math homework is a struggle and he really doesn't like the subject.
+Therefore, I thought, that if I can make an app with customized numbers, it might be more fun.
 
 ### Audience:
-Everyone with a love of being in the kitchen and testing their baking abilities.
+The app is for all kids from 8-14.
+And the app has lot´s of potential to grow in levels and difficulty.
+Kids between 11-15
 
 ### Communication:
 The app expresses its intent through the print statements generated, prompting the user to walk through the options available & make their selections. Various statements also print in a variety of colour to help break up the monotony of the white text, making it easier to read.
@@ -55,7 +60,7 @@ To expand the app and allow users to submit their own recipes. As well as to cha
 ## Design
 
 ### Wireframes:
-![App functionality Wireframe](assets/images/readme-wireframe.png)
+![App functionality Wireframe](images/1.png)
 
 ## Features
 
@@ -67,12 +72,6 @@ To expand the app and allow users to submit their own recipes. As well as to cha
 #### Retrieve or Rate a Recipe:
 ![Rate or Retrieve](assets/images/readme-rate.png)
 
-#### Flavour Selection:
-![Flavour Selection](assets/images/readme-recipe-selection.png)
-
-#### Recipe:
-![Ingredients](assets/images/readme-ingredients.png)
-![Instructions](assets/images/readme-instructions.png)
 
 #### Submit Rating:
 ![Submit Rating](assets/images/readme-rate-recipe.png)
