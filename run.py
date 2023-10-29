@@ -57,8 +57,9 @@ def level2():
     nameans = input(colored(f"\nIf we multiply {name_length} by 10, subtract 50, and add 20, what do we have left? ", 'cyan'))
 
     if nameans == str(namequiz):
-        print("Correct!\n")
+        print(colored("Correct!\n", 'yellow'))
         level3()
+
     else:
         print("Sorry, that's not correct.")
         play_again()
@@ -66,8 +67,8 @@ def level2():
 def level3():
     num_problems = 5
     for _ in range(num_problems):
-        num1 = random.randint(1, 100)
-        num2 = random.randint(1, 100)
+        num1 = random.randint(1, 20)
+        num2 = random.randint(1, 20)
         lev3answer = num1 + num2
         problem = f"What is {num1} + {num2}?"
         user_answer = input(problem + " Your answer: ")
@@ -97,9 +98,9 @@ def level4(name):
         if code_attempt.isdigit() and len(code_attempt) == 4:
             code_attempt = int(code_attempt)
             if code_attempt == code_final:
-                print(colored(f"CONGRATULATIONS {name}! You made it!!!\n", 'light_red'))
-                break  # Exit the loop
-            
+                print(colored(f"CONGRATULATIONS! You made it!!!\n", 'light_red'))
+                sys.exit(0)
+
             else:
                 tries -= 1
                 if tries > 0:
@@ -108,7 +109,7 @@ def level4(name):
                     print(f"Too bad, {name}! You've used all your attempts. Game over.")
                     play_again()
         else:
-            print("Invalid input. Please enter a 4-digit number.")
+            print(colored("Invalid input. Please enter a 4-digit number.", 'yellow'))
 
 def play_again():
     play_again = input("You didn't make it this time. Do you want to play again? (Y / N): ").strip().lower()

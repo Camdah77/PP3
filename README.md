@@ -41,21 +41,19 @@ Every math homework is a struggle and he really doesn't like the subject.
 Therefore, I thought, that if I can make an app with customized numbers, it might be more fun.
 
 ### Audience:
-The app is for all kids from 8-14.
-And the app has lot´s of potential to grow in levels and difficulty.
-Kids between 11-15
+The app is for children who want to practice math and who want to get excited about the subject of mathematics
 
 ### Communication:
-The app expresses its intent through the print statements generated, prompting the user to walk through the options available & make their selections. Various statements also print in a variety of colour to help break up the monotony of the white text, making it easier to read.
+The app prompts the user to go through the available options and make their choices. Different colors make it easier to read the different challenges.
 
 ### Current User Goals:
-To keep the user engaged with the app by allowing them a variety of choices, as well as the ability to restart the application for ease of use if they wish to explore an alternative feature.
+The goal is to engage the user to came to the last level with fun challenges and choices. Since it is different questions every time - the user can came back to solve new challenges. 
 
 ### New User Goals:
 To pick new recipes to try, based on the user ratings provided by the previous user.
 
 ### Future Goals:
-To expand the app and allow users to submit their own recipes. As well as to change the way the recipes are generated, allowing the user to determine the cake size they wish to make, and. how many layers they wish to make for it. A comment section that would allow the user to elaborate on their ratings would also help users to interact with the app on a more personal level.
+The app can expand easy, middle and hard levels. The game can also expand with different type of math problem such as: geometry and algebra.
 
 ## Design
 
