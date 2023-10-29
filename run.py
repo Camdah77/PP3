@@ -15,14 +15,15 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('math')
 
-print("ESCAPE FROM THE MUSEUM")
-print("You are all alone in a museum.\n "  "All the doors are locked.\n " "You need a key to get out. \n" "Your mission: find the key by solving clued (1-5 steps - if you are lucky ).\n")
+print(colored("ESCAPE FROM THE MUSEUM", "red", attrs=["blink"]))
+
+print("You are all alone in a museum.\n" "All the doors are locked.\n" "\n Solve the 4 steps in the game to : find the key by solving the clues.\n")
 
 
 def startlevel():
-    print("You have two doors in front of you.")
-    print("One is to the left and one is to the right")
-    print("\n 1. Left door")
+    print(colored("You have two doors in front of you.",'yellow', 'blue' ))
+    print(colored("One is to the left and one is to the right", 'green' ))
+    print(colored("\n 1. Left door", 'yellow'))
     print("\n 2. Right door")
     doorchoice = input("\nType 1 or 2, to make a choice: " )
     
@@ -33,7 +34,7 @@ def startlevel():
 
 def leftdoor():
     print("\n Great! You now need a code to enter your second door")
-    print("\n code=(a+b)2   | a=5 | b=2")
+    print (colored("\n code=(a+b)2   | a=5 | b=2", 'magenta'))
     leftroom_code = input("\nWhat is the code?  ")
     leftdoor_correct = 14
 
@@ -47,7 +48,7 @@ def leftdoor():
 
 def rightdoor():
     print("\n Nice! 45 to enter your second door")
-    print("\n code=(a-b)5 | a=15 | b=6.")
+    print(colored("\n code=(a-b)5 | a=15 | b=6.", 'magenta'))
     rightroom_code = input("\nWhat is the code?  ")
     rightroom_correct = 45
 
@@ -64,7 +65,8 @@ def level2():
     print(f"Your name contains {name_length} letters")
     
     namequiz = ((name_length * 10) - 50 + 20)
-    nameans = input(f"\nIf we multiply {name_length} by 10, subtract 50, and add 20, what do we have left? ")
+    nameans = input(colored(f"\nIf we multiply {name_length} by 10, subtract 50, and add 20, what do we have left? ",'magenta'
+ ))
     
     if int(nameans) == namequiz:
         level3(name)  # Send user name to next level
