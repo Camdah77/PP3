@@ -91,6 +91,7 @@ def level3():
             print(f"Sorry, the correct answer is  {lev3answer}.\n")
             play_again()
 
+#Level 4 with 4 questions
 def level4(name):
     print(colored(f"Welcome to your final door, {name}!", 'magenta'))
     print("\nTo open the final door, you need to type a secret code of four numbers")
@@ -122,6 +123,7 @@ def level4(name):
         else:
             print(colored("Invalid input. Please enter a 4-digit number.", 'yellow'))
 
+#Allow user to play agian
 def play_again():
     play_again = input("You didn't make it this time. Do you want to play again? (Y / N): ").strip().lower()
     if play_again == "y":
