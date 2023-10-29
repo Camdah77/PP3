@@ -1,11 +1,8 @@
 import gspread
 from google.oauth2.service_account import Credentials
-from datetime import date
-import datetime
 import random
-import operator as op
-import time
 import sys
+from termcolor import colored
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
