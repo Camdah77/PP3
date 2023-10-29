@@ -19,54 +19,54 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('math')
 
 print("ESCAPE FROM THE MUSEUM")
-print("You are all alone in a museum.\n "  "All the doors are locked.\n " "You need a key to get out. \n" "Your mission enter five locked door to find the key.\n")
+print("You are all alone in a museum.\n "  "All the doors are locked.\n " "You need a key to get out. \n" "Your mission: find the key by solving clued (1-5 steps - if you are lucky ).\n")
 
-
-def get_choice(options):
-    valid_choice = False
-    while not valid_choice:
-        print("\n Your alternatvies:")
-        for i, option in enumerate(options, 1):
-            print(f"{i}. {option}")
-        choice = input("Make a choice, please: ")
-
-        if choice.isdigit():
-            choice = int(choice)
-            if 1 <= choice <= len(options):
-                valid_choice = True
-            else:
-                print("Invalid choice. Please try again.")
-        else:
-            print("Invalid input. Please enter a number.")
-    return choice
 
 def startlevel():
+    def get_choice(options):
+        valid_choice = False
+        while not valid_choice:
+            print("\n Your alternatives:")
+            for i, option in enumerate(options, 1):
+                print(f"{i}. {option}")
+            choice = input("Make a choice, please: ")
+
+            if choice.isdigit():
+                choice = int(choice)
+                if 1 <= choice <= len(options):
+                    valid_choice = True
+                else:
+                    print("Invalid choice. Please try again.")
+            else:
+                print("Invalid input. Please enter a number.")
+        return choice
+
     print("You have two doors in front of you.")
     while True:
         choice = get_choice(["Left door", "Right door"])
         if choice == 1:
-            {leftdoor()}
+            leftdoor()
         elif choice == 2:
-            print("Nice! You are closer to the freedom")
-            {rightdoor()}
+              rightdoor()
+
 
 def leftdoor():
-    print("\n After you entered the left door and you now need a code to pass door nr 2")
-    leftroom_code = input("The code is: half of two plus two? Type your answer  :")
-    leftdoor_correct = 3
+    print("\n Great! You now need a cod to enter your second door")
+    leftroom_code = input("   code=(a+b)2   | a=5 | b=2. Your answer  :  ")
+    leftdoor_correct = 14
 
     if int(leftroom_code) == leftdoor_correct : 
         {level2()}
-        valid_choice = False
+
     else:
         print("Sorry, that's not correct.")
         quit()
 
 
 def rightdoor():
-    print("\n Nice! You are closer to the freedom. You now need a cod to enter your second door")
-    rightroom_code = input("The code is: 23 - 13 + 4? Type thr code?  :")
-    rightroom_correct = 14
+    print("\n Nice! You now need a cod to enter your second door")
+    rightroom_code = input(" code=(a-b)5 | a=15 | b=6.    Your answer  :  ")
+    rightroom_correct = 45
 
     if int(rightroom_code) == rightroom_correct: 
         {level2()}
@@ -76,22 +76,23 @@ def rightdoor():
         quit()
 
 def level2():
-    name = input("What is your name?")
+    name = input("Very good! To open the third door, you have to enter your name: ")
     name_length = len(name)
     print(f"Your name contains {name_length} letters")
     
-    namequiz = ((name_length * 10)-50 + 20)
-    nameans = input("If we multiply your letters with 10, subtract 50 and add 20. What we have left?  ")
-
-    if int(nameans) == namequiz: 
-     {level3()}
-           
+    namequiz = ((name_length * 10) - 50 + 20)
+    nameans = input(f"If we multiply {name_length} by 10, subtract 50, and add 20, what do we have left? ")
+    
+    if int(nameans) == namequiz:
+        level3(name)  # Send user name to next level
     else:
-        print("Sorry, that's not correct.The answer was:", namequiz)
+        print("Sorry, that's not correct. The answer was:", namequiz)
         quit()
 
-def level3():
-    print("welcome to level 3")
+def level3(name):
+    print("Welcome, " + name)
+
+
 
 def quit():
     print("You have to stay in the museum until somebody is coming...")
