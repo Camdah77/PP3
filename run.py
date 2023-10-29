@@ -1,22 +1,12 @@
-import gspread
-from google.oauth2.service_account import Credentials
 import random
 import sys
 from termcolor import colored
+import art
 
-SCOPE = [
-    "https://www.googleapis.com/auth/spreadsheets",
-    "https://www.googleapis.com/auth/drive.file",
-    "https://www.googleapis.com/auth/drive"
-    ]
 
-CREDS = Credentials.from_service_account_file('creds.json')
-SCOPED_CREDS = CREDS.with_scopes(SCOPE)
-GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-SHEET = GSPREAD_CLIENT.open('math')
-
-print(colored("ESCAPE FROM THE MUSEUM", "red", attrs=["blink"]))
-
+print(colored("ESCAPE FROM THE MUSEUM", "red"))
+art.welcome_logo()
+print("\n")
 print("You are all alone in a museum.\n" "All the doors are locked.\n" "\n Solve the steps to win the game\n")
 
 
