@@ -32,10 +32,10 @@
 ## UX
 
 ### Site Purpose:
-To allow users to interact with the recipes available on the recipe app. Users may obtain recipes they wish to bake, or submit ratings for recipes they have already tried.
+This app allows the user to practise math in a fun and engaging way. 
 
 ### Site Goal: 
-To provide easy access to recipes and their reviews.
+My own son, 13 years old, think it´s very boring to do his homework in math. By this app I hope to engage kids, as my own son to find the ha
 
 ### Audience:
 Everyone with a love of being in the kitchen and testing their baking abilities.
