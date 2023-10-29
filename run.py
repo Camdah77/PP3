@@ -3,26 +3,30 @@ import sys
 from termcolor import colored
 import art
 
-
+# Welcome message with logo and instructions how to play
 print(colored("ESCAPE FROM THE MUSEUM", "red"))
 art.welcome_logo()
 print("\n")
 print("You are all alone in a museum.\n" "All the doors are locked.\n" "\n Solve the steps to win the game\n")
 
+#Starts the game
 def startlevel():
     print(colored("You have two doors in front of you.", 'green'))
     print(colored("Which door do you enter?", 'magenta'))
 
+#Calling ASCII-Art from art.py
     art.key()
     print("\n 1. Left door")
     print("\n 2. Right door")
     doorchoice = input("\nType 1 or 2 to make a choice: ")
 
+#Two choice for user
     if doorchoice == "1":
         leftdoor()
     elif doorchoice == "2":
         rightdoor()
 
+#Left door function
 def leftdoor():
     print("\nGreat! What is the code to the second door?")
     print(colored("\n code=(a+b)2 | a=5 | b=2", 'magenta'))
@@ -35,6 +39,7 @@ def leftdoor():
         print("Sorry, that's not correct.")
         play_again()
 
+#Right door function
 def rightdoor():
     print("\nNice! What is the code to the second door?")
     print(colored("\n code=(a-b)5 | a=15 | b=6.", 'magenta'))
@@ -47,6 +52,7 @@ def rightdoor():
         print(f"Sorry, that's not correct. The code was: {rightroom_correct}")
         play_again()
 
+#Level 2 with name input function
 def level2():
     art.fire()
     name = input(colored("\nVery good! To open the third door, you have to enter your name: ", 'magenta'))
@@ -64,20 +70,19 @@ def level2():
         print("Sorry, that's not correct.")
         play_again()
 
+#Level 3 with random numbers to addition
 def level3():
-    num_problems = 5
-    for _ in range(num_problems):
-        num1 = random.randint(1, 20)
-        num2 = random.randint(1, 20)
+        num1 = random.randint(1, 50)
+        num2 = random.randint(1, 50)
         lev3answer = num1 + num2
-        problem = f"What is {num1} + {num2}?"
-        user_answer = input(problem + " Your answer: ")
+        level3question = f"What is {num1} + {num2}?"
+        user_answer = input(level3question + " Your answer: ")
 
         if user_answer == str(lev3answer):
             print("Correct!\n")
             level4(user_answer)
         else:
-            print(f"Sorry, the correct answer is {lev3answer}.\n")
+            print(f"Sorry, the correct answer is  {lev3answer}.\n")
             play_again()
 
 def level4(name):
@@ -98,7 +103,7 @@ def level4(name):
         if code_attempt.isdigit() and len(code_attempt) == 4:
             code_attempt = int(code_attempt)
             if code_attempt == code_final:
-                print(colored(f"CONGRATULATIONS! You made it!!!\n", 'light_red'))
+                print(colored(f"CONGRATULATIONS ! You made it!!!\n", 'light_red'))
                 sys.exit(0)
 
             else:
