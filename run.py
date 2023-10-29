@@ -17,13 +17,13 @@ SHEET = GSPREAD_CLIENT.open('math')
 
 print(colored("ESCAPE FROM THE MUSEUM", "red", attrs=["blink"]))
 
-print("You are all alone in a museum.\n" "All the doors are locked.\n" "\n Solve the 4 steps in the game to : find the key by solving the clues.\n")
+print("You are all alone in a museum.\n" "All the doors are locked.\n" "\n Solve the steps to win the game\n")
 
 
 def startlevel():
-    print(colored("You have two doors in front of you.",'yellow', 'blue' ))
-    print(colored("One is to the left and one is to the right", 'green' ))
-    print(colored("\n 1. Left door", 'yellow'))
+    print(colored("You have two doors in front of you.",'green' ))
+    print(colored("Which door do you enter?", 'magenta' ))
+    print("\n 1. Left door")
     print("\n 2. Right door")
     doorchoice = input("\nType 1 or 2, to make a choice: " )
     
@@ -60,12 +60,12 @@ def rightdoor():
         quit()
 
 def level2():
-    name = input("\nVery good! To open the third door, you have to enter your name: ")
+    name = input(colored("\nVery good! To open the third door, you have to enter your name: ", 'magenta'))
     name_length = len(name)
     print(f"Your name contains {name_length} letters")
     
     namequiz = ((name_length * 10) - 50 + 20)
-    nameans = input(colored(f"\nIf we multiply {name_length} by 10, subtract 50, and add 20, what do we have left? ",'magenta'
+    nameans = input(colored(f"\nIf we multiply {name_length} by 10, subtract 50, and add 20, what do we have left? ",'cyan'
  ))
     
     if int(nameans) == namequiz:
@@ -76,13 +76,13 @@ def level2():
         quit()
 
 def level3(name):
-    print("Welcome to your final door, " + name)
-    print("\n To open the final door, you need to type a secret code with four numbers")
+    print(colored("Welcome to your final door, " + name ,'magenta'))
+    print("\n To open the final door, you need to type a secret code of four numbers")
 
-    print("1: January is month number 1. What is May? ")
-    print("\n 2: How many planets are there in the solar system?")
-    print("\n 3: If A is number 1. What is F?")
-    print("\n 4 The sum of: 23 + 21 + 200 + 12 + 22 + 8 + 12 + 5 multiplyed with 0?")
+    print(colored("1: January is month number 1. What is May?", 'red'))
+    print(colored("\n 2: How many planets are there in the solar system?", 'yellow' ))
+    print(colored("\n 3: If A is number 1. What is F?", 'red' ))
+    print(colored("\n 4 The sum of: 23 + 21 + 200 + 12 + 22 + 8 + 12 + 5 multiplyed with 0?",'yellow' ))
 
     code_final = 5860
     tries = 3  # Number of allowed tries
@@ -94,7 +94,7 @@ def level3(name):
         if code_attempt.isdigit() and len(code_attempt) == 4:
             code_attempt = int(code_attempt)
             if code_attempt == code_final:
-                print("CONGRATULATIONS  " + name + "! You made it!!! \n")
+                print(colored("CONGRATULATIONS  " + name + "! You made it!!! \n", 'light_red'	))
                 break  # Exit the loop
 
             else:
