@@ -114,7 +114,7 @@ def level4(name):
         if code_attempt.isdigit() and len(code_attempt) == 4:
             code_attempt = int(code_attempt)
             if code_attempt == code_final:
-                print(colored(f"CONGRATULATIONS ! You made it!!!\n", 'light_red'))
+                print(colored(f"CONGRATULATIONS ! You made it!!!\n", 'green'))
                 sys.exit(0)
 
             else:
