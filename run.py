@@ -3,6 +3,7 @@ import sys
 from termcolor import colored
 import art
 
+
 # Welcome message with logo and instructions how to play
 print(colored("ESCAPE FROM THE MUSEUM", "red"))
 art.welcome_logo()
@@ -26,31 +27,38 @@ def startlevel():
     elif doorchoice == "2":
         rightdoor()
 
-#Left door function
+#Left door function with addition
 def leftdoor():
-    print("\nGreat! What is the code to the second door?")
-    print(colored("\n code=(a+b)2 | a=5 | b=2", 'magenta'))
-    leftroom_code = input("\nWhat is the code? ")
-    leftdoor_correct = 14
+    num1 = random.randint(1, 100)
+    num2 = random.randint(1, 100)
+      
+    leftroom_code = num1 + num2
+    leftdoor_quest = f"What is {num1} + {num2}?"
+    leftdoor_ans = input(leftdoor_quest + " Your answer: ")
 
-    if leftroom_code == str(leftdoor_correct):
-        level2()
+    if leftdoor_ans == str(leftdoor_ans):
+            print("Correct!\n")
+            level2()
     else:
-        print("Sorry, that's not correct.")
-        play_again()
-
-#Right door function
+            print(f"Wrong code. The door remains locked")
+            play_again()
+  
+#Right door function33 with subtraction
 def rightdoor():
-    print("\nNice! What is the code to the second door?")
-    print(colored("\n code=(a-b)5 | a=15 | b=6.", 'magenta'))
-    rightroom_code = input("\nWhat is the code? ")
-    rightroom_correct = 45
 
-    if rightroom_code == str(rightroom_correct):
-        level2()
+    num1 = random.randint(1, 100)
+    num2 = random.randint(1, 50)
+
+    rightroom_code = num1 - num2
+    rightdoor_quest = f"What is {num1} + {num2}?"
+    rightdoor_ans = input(rightdoor_quest + " Your answer: ")
+
+    if rightdoor_ans == str(rightdoor_quest):
+            print("Correct!\n")
+            level2()
     else:
-        print(f"Sorry, that's not correct. The code was: {rightroom_correct}")
-        play_again()
+            print(f"Wrong code. The door remains locked")
+            play_again()
 
 #Level 2 with name input function
 def level2():
@@ -72,8 +80,6 @@ def level2():
 
 #Level 3 with random numbers to addition
 def level3():
-        num1 = random.randint(1, 50)
-        num2 = random.randint(1, 50)
         lev3answer = num1 + num2
         level3question = f"What is {num1} + {num2}?"
         user_answer = input(level3question + " Your answer: ")
