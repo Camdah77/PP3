@@ -80,14 +80,18 @@ def level2():
 
 #Level 3 with random numbers to addition
 def level3():
-        lev3answer = num1 + num2
-        level3question = f"What is {num1} + {num2}?"
-        user_answer = input(level3question + " Your answer: ")
 
-        if user_answer == str(lev3answer):
+    num1 = random.randint(1, 100)
+    num2 = random.randint(1, 50)
+
+    lev3answer = num1 + num2
+    level3question = f"What is {num1} + {num2}?"
+    user_answer = input(level3question + " Your answer: ")
+
+    if user_answer == str(lev3answer):
             print("Correct!\n")
             level4(user_answer)
-        else:
+    else:
             print(f"Sorry, the correct answer is  {lev3answer}.\n")
             play_again()
 
