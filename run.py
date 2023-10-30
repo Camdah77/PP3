@@ -15,11 +15,17 @@ print("You are all alone in a museum.\n"
 "\n Solve the steps to reach the freedom\n")
 
 
-#Starts the game
+def username():
+    while True:
+        username = input("Please enter your name: ")
+        if username.isalpha():
+            return username
+        else:
+            print("Invalid name. Please enter a name with only alphabetic characters.")
 
 
-def startlevel():
-    print(colored("You have two doors in front of you.", 'green'))
+def startlevel(username):
+    print(colored(f"{username}You have two doors in front of you.", 'green'))
     print(colored("One door is taking you to the a dark basement.", 'green'))
     print(colored("And one door is taking you one step closer to the freedom", 'magenta'))
     print(colored("Which door do you enter?", 'yellow'))
@@ -32,17 +38,19 @@ def startlevel():
 
 #Two choice for user
     if doorchoice == "1":
-        leftdoor()
+        leftdoor(username)
     elif doorchoice == "2":
-        rightdoor()
+        rightdoor(username)
     else:
        print(colored(f"Please enter 1 och 2", "red"))
     play_again()
 
+
+
+
 #Left door function
 
-
-def leftdoor():
+def leftdoor(username):
     print("\n Left door was a good choice!")
     print("\nThe second door also needs a code:")
 
@@ -56,7 +64,7 @@ def leftdoor():
 
     if leftroom_ans == str(leftroom_code):
         print(colored("Correct!\n", 'magenta'))
-        level2()
+        level2(username)
     else:
         print(colored("Wrong code. The door remains locked", 'red'))
         play_again()
@@ -65,7 +73,7 @@ def leftdoor():
 #Right door function
 
 
-def rightdoor():
+def rightdoor(username):
     print("\nYou made a very good choice.")
     print("\nThe second door also needs a code:")
 
@@ -79,7 +87,7 @@ def rightdoor():
 
     if rightdoor_ans == str(rightroom_code):
         print(colored("Correct!\n", 'magenta'))
-        level2()
+        level2(username)
 
     else:
         print(colored("Wrong code. The door remains locked", 'red'))
@@ -88,10 +96,9 @@ def rightdoor():
 
 #Level 2 function
 
-def level2():
+def level2(username):  # Pass the username as an argument
     art.fire()
-    name = input(colored("\nVery good! To open the third door, you have to enter your name: ", 'magenta'))
-    name_length = len(name)
+    name_length = len(username)
     print(f"Your name contains {name_length} letters")
 
     namequiz = ((name_length * 10) - 50 + 20)
@@ -100,10 +107,10 @@ def level2():
 
     if nameans == str(namequiz):
         print(colored("Correct!\n", 'magenta'))
-        level3()
+        level4()
 
     else:
-        print(colored("Wrong code. The door remains locked. The code is: {namequiz}.", 'red'))
+        print(colored(f"Wrong code. The door remains locked. The code is: {namequiz}.", 'red'))
         play_again()
 
         
@@ -169,12 +176,14 @@ def level4():
 
 
 def play_again():
-    play_again = input("You didn't make it this time. Do you want to play again? (Y / N): ").strip().lower()
-    if play_again == "y":
-        startlevel()  # Restart the game
+    play_again_input = input("You didn't make it this time. Do you want to play again? (Y / N): ").strip().lower()
+    if play_again_input == "y":
+        startlevel(username)
+  # Restart the game
     else:
         print("Sorry... You have to stay in the museum until somebody comes...")
         sys.exit(0)
 
 if __name__ == "__main__":
-    startlevel()
+    username = username()  # Call the function and store the result in user_name
+    startlevel(username)  # Pass user_name as an argument to the startlevel function
