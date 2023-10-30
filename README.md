@@ -74,6 +74,11 @@ The app can expand with easy, middle and hard levels. The game can also expand w
 To make the landing page welcoming I added a colorful image as a background. 
 I also wrote my name and contact info to GitHub, Linkedin and e-mail.
 
+![Options to go left or right](images/1door.png)
+After welcome message. The user has a option to left or right.
+
+
+
 #### Restart or Quit app:
 The game allows players to replay the game if they don't succeed initially, which improves the user experience.
 

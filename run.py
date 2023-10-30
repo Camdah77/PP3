@@ -20,14 +20,15 @@ print("You are all alone in a museum.\n"
 
 def startlevel():
     print(colored("You have two doors in front of you.", 'green'))
-    print(colored("Which door do you enter?", 'magenta'))
-
+    print(colored("One door is taking you to the a dark basement.", 'green'))
+    print(colored("And one door is taking you one step closer to the freedom", 'magenta'))
+    print(colored("Which door do you enter?", 'yellow'))
 
 #Calling ASCII - Art from art.py
     art.key()
-    print("\n 1. Left door")
+    print("\n 1. Left door ")
     print("\n 2. Right door")
-    doorchoice = input("\nType 1 or 2 to make a choice: ")
+    doorchoice = input(colored("\nType 1 or 2 to make a choice:  ", 'yellow'))
 
 #Two choice for user
     if doorchoice == "1":
@@ -44,8 +45,11 @@ def leftdoor():
     num2 = random.randint(1, 100)
       
     leftroom_code = num1 + num2
-    leftdoor_quest = f"What is {num1} + {num2}?"
-    leftdoor_ans = input(leftdoor_quest + " Your answer: ")
+
+    print("\n You made a very good choice. ")
+    print("\n The second door need a code: ")
+    leftdoor_quest =(f"What is {num1} + {num2}?",'yellow')
+    leftdoor_ans = input(" Your answer: ")
 
     if leftdoor_ans == str(leftdoor_ans):
             print("Correct!\n")
@@ -64,7 +68,12 @@ def rightdoor():
     num2 = random.randint(1, 50)
 
     rightroom_code = num1 - num2
+    
+    print("\n You made a very good choice. ")
+    print("\n The second door need a code: ")
+    
     rightdoor_quest = f"What is {num1} + {num2}?"
+    print(rightdoor_quest)
     rightdoor_ans = input(rightdoor_quest + " Your answer: ")
 
     if rightdoor_ans == str(rightdoor_quest):
@@ -80,8 +89,7 @@ def rightdoor():
 
 def level2():
     art.fire()
-    name = input(colored("\nVery good! To open the third door," 
-    "you have to enter your name: ", 'magenta'))
+    name = input(colored("\nVery good! To open the third door, you have to enter your name: ", 'magenta'))
     name_length = len(name)
     print(f"Your name contains {name_length} letters")
 
@@ -107,6 +115,8 @@ def level3():
     num2 = random.randint(1, 50)
 
     lev3answer = num1 + num2
+
+    print("\n Well done- But antoher code infront of you! ")
     level3question = f"What is {num1} + {num2}?"
     user_answer = input(level3question + " Your answer: ")
 
