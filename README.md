@@ -85,11 +85,10 @@ The game allows players to replay the game if they don't succeed initially, whic
 
 ## Testing
 
-
-
 ### Validator Testing
-- The code has been tested by using [PEP8 Online](http://pep8online.com/).
-![PEP8 Validation](assets/images/readme-pep8.png)
+- The code has been tested by using:
+- Python code checker https://extendsclass.com/python-tester.html 
+![Python syntax checker](images/pythonval.png) 
 
 ### Unfixed Bugs
 
@@ -141,4 +140,4 @@ My mentor, Lauren-Nicole Popich who supported me with ideas and always give me w
 My Cohort Facilitator David Calikes as always gives positive energy and coaching. He always makes time for his students for small and big questions.
 
 ### Media
-Recipes used for the app were written by me.
+The story was created by me and my two sons Hugo and William

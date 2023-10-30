@@ -5,17 +5,25 @@ import art
 
 
 # Welcome message with logo and instructions how to play
+print(colored("Welcome to", "white"))
+
 print(colored("ESCAPE FROM THE MUSEUM", "red"))
 art.welcome_logo()
 print("\n")
-print("You are all alone in a museum.\n" "All the doors are locked.\n" "\n Solve the steps to win the game\n")
+print("You are all alone in a museum.\n" 
+"All the doors are locked.\n" 
+"\n Solve the steps to reach the freedom\n")
+
 
 #Starts the game
+
+
 def startlevel():
     print(colored("You have two doors in front of you.", 'green'))
     print(colored("Which door do you enter?", 'magenta'))
 
-#Calling ASCII-Art from art.py
+
+#Calling ASCII - Art from art.py
     art.key()
     print("\n 1. Left door")
     print("\n 2. Right door")
@@ -27,7 +35,10 @@ def startlevel():
     elif doorchoice == "2":
         rightdoor()
 
+
 #Left door function with addition
+
+
 def leftdoor():
     num1 = random.randint(1, 100)
     num2 = random.randint(1, 100)
@@ -43,7 +54,10 @@ def leftdoor():
             print(f"Wrong code. The door remains locked")
             play_again()
   
+
 #Right door function33 with subtraction
+
+
 def rightdoor():
 
     num1 = random.randint(1, 100)
@@ -60,15 +74,20 @@ def rightdoor():
             print(f"Wrong code. The door remains locked")
             play_again()
 
+
 #Level 2 with name input function
+
+
 def level2():
     art.fire()
-    name = input(colored("\nVery good! To open the third door, you have to enter your name: ", 'magenta'))
+    name = input(colored("\nVery good! To open the third door," 
+    "you have to enter your name: ", 'magenta'))
     name_length = len(name)
     print(f"Your name contains {name_length} letters")
 
     namequiz = ((name_length * 10) - 50 + 20)
-    nameans = input(colored(f"\nIf we multiply {name_length} by 10, subtract 50, and add 20, what do we have left? ", 'cyan'))
+    nameans = input(colored(f"\nIf we multiply {name_length} by 10," 
+    "subtract 50, and add 20, what do we have left? ", 'cyan'))
 
     if nameans == str(namequiz):
         print(colored("Correct!\n", 'yellow'))
@@ -78,7 +97,10 @@ def level2():
         print("Sorry, that's not correct.")
         play_again()
 
+
 #Level 3 with random numbers to addition
+
+
 def level3():
 
     num1 = random.randint(1, 100)
@@ -95,17 +117,22 @@ def level3():
             print(f"Sorry, the correct answer is  {lev3answer}.\n")
             play_again()
 
+
 #Level 4 with 4 questions
+
+
 def level4(name):
     print(colored(f"Welcome to your final door, {name}!", 'magenta'))
-    print("\nTo open the final door, you need to type a secret code of four numbers")
+    print("\nTo open the final door, "
+    "you need to type a secret code of four numbers")
 
-    print(colored("1: January is month number 1. What is May?", 'red'))
-    print(colored("2: How many planets are there in the solar system?", 'yellow'))
+    print(colored("1:The manager of the museum have birthday ", 'red'))
+    print("2: The museum opensis 64 m²"
+    "there in the solar system?")
     print(colored("3: If A is number 1. What is F?", 'red'))
     print(colored("4: The sum of: 23 + 21 + 200 + 12 + 22 + 8 + 12 + 5 multiplied by 0?", 'yellow'))
 
-    code_final = 5860
+    code_final = 7860
     tries = 3  # Number of allowed tries
 
     while tries > 0:
@@ -127,7 +154,10 @@ def level4(name):
         else:
             print(colored("Invalid input. Please enter a 4-digit number.", 'yellow'))
 
+
 #Allow user to play agian
+
+
 def play_again():
     play_again = input("You didn't make it this time. Do you want to play again? (Y / N): ").strip().lower()
     if play_again == "y":
