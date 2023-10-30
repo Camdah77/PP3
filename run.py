@@ -10,9 +10,9 @@ print(colored("Welcome to", "white"))
 print(colored("ESCAPE FROM THE MUSEUM", "red"))
 art.welcome_logo()
 print("\n")
-print("You are all alone in a museum.\n" 
-"All the doors are locked.\n" 
-"\n Solve the steps to reach the freedom\n")
+print("You are all alone in a museum.\n"
+      "All the doors are locked.\n"
+      "\n Solve the steps to reach the freedom\n")
 
 
 def username():
@@ -21,34 +21,34 @@ def username():
         if username.isalpha():
             return username
         else:
-            print("Invalid name. Please enter a name with only alphabetic characters.")
+            print("Invalid name. Please enter"
+                  "a name with only alphabetic characters.")
 
 
 def startlevel(username):
     print(colored(f"{username}You have two doors in front of you.", 'green'))
     print(colored("One door is taking you to the a dark basement.", 'green'))
-    print(colored("And one door is taking you one step closer to the freedom", 'magenta'))
+    print(colored("And one door is taking you"
+                  "one step closer to the freedom", 'magenta'))
     print(colored("Which door do you enter?", 'yellow'))
 
-#Calling ASCII - Art from art.py
+# Calling ASCII - Art from art.py
     art.key()
     print("\n 1. Left door ")
     print("\n 2. Right door")
     doorchoice = input(colored("\nType 1 or 2 to make a choice:  ", 'yellow'))
 
-#Two choice for user
+# Two choice for user
     if doorchoice == "1":
         leftdoor(username)
     elif doorchoice == "2":
         rightdoor(username)
     else:
-       print(colored(f"Please enter 1 och 2", "red"))
+        print(colored(f"Please enter 1 och 2", "red"))
     play_again()
 
 
-
-
-#Left door function
+# Left door function
 
 def leftdoor(username):
     print("\n Left door was a good choice!")
@@ -59,7 +59,7 @@ def leftdoor(username):
 
     leftroom_code = num1 - num2
 
-    print(colored(f"What is {num1} - {num2} ?", 'yellow'))  
+    print(colored(f"What is {num1} - {num2} ?", 'yellow'))
     leftroom_ans = input("Type the code: ")
 
     if leftroom_ans == str(leftroom_code):
@@ -70,7 +70,7 @@ def leftdoor(username):
         play_again()
 
 
-#Right door function
+# Right door function
 
 
 def rightdoor(username):
@@ -82,7 +82,7 @@ def rightdoor(username):
 
     rightroom_code = num1 - num2
 
-    print(f"What is {num1} - {num2} ?")  
+    print(f"What is {num1} - {num2}?")
     rightdoor_ans = input("Type the code: ")
 
     if rightdoor_ans == str(rightroom_code):
@@ -94,7 +94,7 @@ def rightdoor(username):
         play_again()
 
 
-#Level 2 function
+# Level 2 function
 
 def level2(username):  # Pass the username as an argument
     art.fire()
@@ -102,28 +102,28 @@ def level2(username):  # Pass the username as an argument
     print(f"Your name contains {name_length} letters")
 
     namequiz = ((name_length * 10) - 50 + 20)
-    nameans = input(colored(f"\nIf we multiply {name_length} by 10," 
-    "subtract 50, and add 20, what do we have left? ", 'yellow'))
+    nameans = input(colored(f"\nIf we multiply {name_length} by 10,"
+                            "subtract 50, and add 20,"
+                            "what do we have left? ", 'yellow'))
 
     if nameans == str(namequiz):
         print(colored("Correct!\n", 'magenta'))
         level4()
 
     else:
-        print(colored(f"Wrong code. The door remains locked. The code is: {namequiz}.", 'red'))
+        print(colored(f"Wrong code. The door remains"
+                      "locked. The code is: {namequiz}.", 'red'))
         play_again()
 
-        
-#Level 3 with random numbers to addition
+
+# Level 3 with random numbers to addition
 
 
 def level3():
     print("\nYour are brilliant in math")
     print("\nYou now ony have two doors left:")
-    
     num1 = random.randint(1, 10)
     num2 = random.randint(1, 10)
-   
     level3_code = num1 * num2
 
     print(colored(f"What is {num1}*{num2}?", 'yellow'))
@@ -137,17 +137,18 @@ def level3():
         print(colored("Wrong code. The door remains locked ", 'red'))
         play_again()
 
-#Level 4 with 4 questions
+# Level 4 with 4 questions
 
 
 def level4():
     print(colored(f"Welcome to the final door", 'green'))
     print("\nCan you solve the code for last door? ")
-   
     print(colored("1:If January is month  nr 1: what number is July", 'red'))
     print(colored("2: What is 18 - 10", 'yellow'))
     print(colored("3: If A is number 1. What is F?", 'red'))
-    print(colored("4: The sum of: 23 + 21 + 200 + 12 + 22 + 8 + 12 + 5 multiplied by 0?", 'yellow'))
+    print(colored("4: The sum of:"
+                  "23 + 21 + 200 + 12 + 22 + 8 + 12 + 5"
+                  "multiplied by 0?", 'yellow'))
 
     code_final = 7860
     tries = 3  # Number of allowed tries
@@ -164,26 +165,39 @@ def level4():
             else:
                 tries -= 1
                 if tries > 0:
-                    print(f"Wrong code! You have {tries} {'tries' if tries > 1 else 'try'} left")
+                    print(f"Wrong code!"
+                          "You have {tries} {'tries' if tries > "
+                          "1 else 'try'} left")
                 else:
-                    print(f"Too bad, {name}! You've used all your attempts. Game over.")
+                    print(f"Too bad, {name}! You've "
+                          "used all your attempts. Game over.")
                     play_again()
         else:
-            print(colored("Invalid input. Please enter a 4-digit number.", 'yellow'))
+            print(colored("Invalid input. Please "
+                          "enter a 4-digit number.", 'yellow'))
 
 
-#Allow user to play agian
+# Allow user to play agian
 
 
 def play_again():
-    play_again_input = input("You didn't make it this time. Do you want to play again? (Y / N): ").strip().lower()
+    play_again_input = input("You didn't make it this time. "
+                             "Do you want to play again?"
+                             " (Y / N): ").strip().lower()
     if play_again_input == "y":
         startlevel(username)
-  # Restart the game
+
+# Restart the game
+
     else:
-        print("Sorry... You have to stay in the museum until somebody comes...")
+        print("Sorry... You have to stay in"
+              "the museum until somebody comes...")
         sys.exit(0)
 
+
+# Call the function and store the result in user_name
+# Pass user_name as an argument to the startlevel function
+
 if __name__ == "__main__":
-    username = username()  # Call the function and store the result in user_name
-    startlevel(username)  # Pass user_name as an argument to the startlevel function
+    username = username()  # result in user_name
+    startlevel(username)  # Pass 
