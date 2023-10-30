@@ -35,8 +35,7 @@ def startlevel():
         leftdoor()
     elif doorchoice == "2":
         rightdoor()
-
-
+    while doorchoice 
 #Left door function with addition
 
 
@@ -110,15 +109,13 @@ def level2():
 
 
 def level3():
-
+    print("\n Well done- But antoher code infront of you! ")
     num1 = random.randint(1, 100)
     num2 = random.randint(1, 50)
 
     lev3answer = num1 + num2
-
-    print("\n Well done- But antoher code infront of you! ")
     level3question = f"What is {num1} + {num2}?"
-    user_answer = input(level3question + " Your answer: ")
+    user_answer = input(" Your answer: ")
 
     if user_answer == str(lev3answer):
             print("Correct!\n")
@@ -136,9 +133,8 @@ def level4(name):
     print("\nTo open the final door, "
     "you need to type a secret code of four numbers")
 
-    print(colored("1:The manager of the museum have birthday ", 'red'))
-    print("2: The museum opensis 64 m²"
-    "there in the solar system?")
+    print(colored("1:If January is month  nr 1: what number is July", 'red'))
+    print(colored("2: What is 18 - 10"))
     print(colored("3: If A is number 1. What is F?", 'red'))
     print(colored("4: The sum of: 23 + 21 + 200 + 12 + 22 + 8 + 12 + 5 multiplied by 0?", 'yellow'))
 
