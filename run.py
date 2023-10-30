@@ -35,8 +35,9 @@ def startlevel():
         leftdoor()
     elif doorchoice == "2":
         rightdoor()
-    while doorchoice 
-#Left door function with addition
+    else:
+       print(f"Please enter 1 och 2")
+    play_again()
 
 
 def leftdoor():
