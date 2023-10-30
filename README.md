@@ -87,8 +87,8 @@ The game allows players to replay the game if they don't succeed initially, whic
 
 ### Validator Testing
 - The code has been tested by using:
-- Python code checker https://extendsclass.com/python-tester.html 
-![Python syntax checker](images/pythonval.png) 
+- Python code checker - https://extendsclass.com/python-tester.html 
+![Python code checker](/images/pythonval.png)
 
 ### Unfixed Bugs
 
@@ -127,13 +127,24 @@ The site was deployed to Heroku. The steps to deploy are as follows:
 - - git push origin main
 - - git push heroku main
 
+The deployemt to the GitHub are as follows:
+- From this project's repository, navigate to the settings tab
+- From the left hand menu, select pages.
+- From the source section drop-down menu, select the Main Branch.
+- Once the main branch has been selected, the page will refresh and provide a link to the live project.
+
 ## Credits
 
 ### Content
+Code Institute-  https://codeinstitute.net/ - "Love Sandwish" walkthrought was very useful when setting up the environment to this page. I also have the videos as tutorials when I was stucked in python issues. 
+
+W3School- https://www.w3schools.com/python/default.asp - Very useful tutorials that I ahve look at during the process
+
+### Thank you
 My son, William 13 years, has been my biggest source of inspiration in this project. 
 He think it is so boring with mathematics and my challenge was to get him interested in mathematics again.
 
-My son, Hugo 15 years old,  have supported and tested the app and made lot´s of suggestions.
+My son, Hugo 15 years old have supported and tested the app and made lot´s of suggestions.
 
 My mentor, Lauren-Nicole Popich who supported me with ideas and always give me wise advice how I can improve in my continuing education. 
 
