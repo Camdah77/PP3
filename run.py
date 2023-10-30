@@ -36,56 +36,57 @@ def startlevel():
     elif doorchoice == "2":
         rightdoor()
     else:
-       print(f"Please enter 1 och 2")
+       print(colored(f"Please enter 1 och 2", "red"))
     play_again()
+
+#Left door function
 
 
 def leftdoor():
+    print("\n Left door was a good choice!")
+    print("\nThe second door also needs a code:")
+
     num1 = random.randint(1, 100)
-    num2 = random.randint(1, 100)
-      
-    leftroom_code = num1 + num2
+    num2 = random.randint(1, 50)
 
-    print("\n You made a very good choice. ")
-    print("\n The second door need a code: ")
-    leftdoor_quest =(f"What is {num1} + {num2}?",'yellow')
-    leftdoor_ans = input(" Your answer: ")
+    leftroom_code = num1 - num2
 
-    if leftdoor_ans == str(leftdoor_ans):
-            print("Correct!\n")
-            level2()
+    print(colored(f"What is {num1} - {num2} ?", 'yellow'))  
+    leftroom_ans = input("Type the code: ")
+
+    if leftroom_ans == str(leftroom_code):
+        print(colored("Correct!\n", 'magenta'))
+        level2()
     else:
-            print(f"Wrong code. The door remains locked")
-            play_again()
-  
+        print(colored("Wrong code. The door remains locked", 'red'))
+        play_again()
 
-#Right door function33 with subtraction
+
+#Right door function
 
 
 def rightdoor():
+    print("\nYou made a very good choice.")
+    print("\nThe second door also needs a code:")
 
     num1 = random.randint(1, 100)
     num2 = random.randint(1, 50)
 
     rightroom_code = num1 - num2
-    
-    print("\n You made a very good choice. ")
-    print("\n The second door need a code: ")
-    
-    rightdoor_quest = f"What is {num1} + {num2}?"
-    print(rightdoor_quest)
-    rightdoor_ans = input(rightdoor_quest + " Your answer: ")
 
-    if rightdoor_ans == str(rightdoor_quest):
-            print("Correct!\n")
-            level2()
+    print(f"What is {num1} - {num2} ?")  
+    rightdoor_ans = input("Type the code: ")
+
+    if rightdoor_ans == str(rightroom_code):
+        print(colored("Correct!\n", 'magenta'))
+        level2()
+
     else:
-            print(f"Wrong code. The door remains locked")
-            play_again()
+        print(colored("Wrong code. The door remains locked", 'red'))
+        play_again()
 
 
-#Level 2 with name input function
-
+#Level 2 function
 
 def level2():
     art.fire()
@@ -95,47 +96,49 @@ def level2():
 
     namequiz = ((name_length * 10) - 50 + 20)
     nameans = input(colored(f"\nIf we multiply {name_length} by 10," 
-    "subtract 50, and add 20, what do we have left? ", 'cyan'))
+    "subtract 50, and add 20, what do we have left? ", 'yellow'))
 
     if nameans == str(namequiz):
-        print(colored("Correct!\n", 'yellow'))
+        print(colored("Correct!\n", 'magenta'))
         level3()
 
     else:
-        print("Sorry, that's not correct.")
+        print(colored("Wrong code. The door remains locked. The code is: {namequiz}.", 'red'))
         play_again()
 
-
+        
 #Level 3 with random numbers to addition
 
 
 def level3():
-    print("\n Well done- But antoher code infront of you! ")
-    num1 = random.randint(1, 100)
-    num2 = random.randint(1, 50)
+    print("\nYour are brilliant in math")
+    print("\nYou now ony have two doors left:")
+    
+    num1 = random.randint(1, 10)
+    num2 = random.randint(1, 10)
+   
+    level3_code = num1 * num2
 
-    lev3answer = num1 + num2
-    level3question = f"What is {num1} + {num2}?"
-    user_answer = input(" Your answer: ")
+    print(colored(f"What is {num1}*{num2}?", 'yellow'))
+    level3_ans = input("Type the your answer: ")
 
-    if user_answer == str(lev3answer):
-            print("Correct!\n")
-            level4(user_answer)
+    if level3_ans == str(level3_code):
+        print(colored("Correct!\n", 'magenta'))
+        level4()
+
     else:
-            print(f"Sorry, the correct answer is  {lev3answer}.\n")
-            play_again()
-
+        print(colored("Wrong code. The door remains locked ", 'red'))
+        play_again()
 
 #Level 4 with 4 questions
 
 
-def level4(name):
-    print(colored(f"Welcome to your final door, {name}!", 'magenta'))
-    print("\nTo open the final door, "
-    "you need to type a secret code of four numbers")
-
+def level4():
+    print(colored(f"Welcome to the final door", 'green'))
+    print("\nCan you solve the code for last door? ")
+   
     print(colored("1:If January is month  nr 1: what number is July", 'red'))
-    print(colored("2: What is 18 - 10"))
+    print(colored("2: What is 18 - 10", 'yellow'))
     print(colored("3: If A is number 1. What is F?", 'red'))
     print(colored("4: The sum of: 23 + 21 + 200 + 12 + 22 + 8 + 12 + 5 multiplied by 0?", 'yellow'))
 
